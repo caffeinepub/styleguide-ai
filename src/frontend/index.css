@@ -1,0 +1,95 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Figtree:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --radius: 1rem;
+
+    /* Dark luxury palette — always dark */
+    --background: 0.11 0.012 28;
+    --foreground: 0.95 0.01 85;
+    --card: 0.16 0.014 28;
+    --card-foreground: 0.95 0.01 85;
+    --popover: 0.18 0.014 28;
+    --popover-foreground: 0.95 0.01 85;
+    --primary: 0.72 0.12 22;
+    --primary-foreground: 0.11 0.012 28;
+    --secondary: 0.22 0.018 28;
+    --secondary-foreground: 0.95 0.01 85;
+    --muted: 0.20 0.015 28;
+    --muted-foreground: 0.55 0.025 60;
+    --accent: 0.80 0.09 72;
+    --accent-foreground: 0.11 0.012 28;
+    --destructive: 0.60 0.20 22;
+    --destructive-foreground: 0.95 0.01 85;
+    --border: 0.28 0.015 28;
+    --input: 0.20 0.015 28;
+    --ring: 0.72 0.12 22;
+    --chart-1: 0.72 0.12 22;
+    --chart-2: 0.80 0.09 72;
+    --chart-3: 0.55 0.08 250;
+    --chart-4: 0.65 0.14 160;
+    --chart-5: 0.70 0.10 300;
+    --sidebar: 0.14 0.013 28;
+    --sidebar-foreground: 0.95 0.01 85;
+    --sidebar-primary: 0.72 0.12 22;
+    --sidebar-primary-foreground: 0.11 0.012 28;
+    --sidebar-accent: 0.22 0.018 28;
+    --sidebar-accent-foreground: 0.95 0.01 85;
+    --sidebar-border: 0.28 0.015 28;
+    --sidebar-ring: 0.72 0.12 22;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Figtree', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  h1, h2, h3 {
+    font-family: 'Playfair Display', serif;
+  }
+}
+
+@layer utilities {
+  .font-display {
+    font-family: 'Playfair Display', serif;
+  }
+
+  .mesh-bg {
+    background:
+      radial-gradient(ellipse 80% 60% at 50% -10%, oklch(0.72 0.12 22 / 0.18) 0%, transparent 60%),
+      radial-gradient(ellipse 50% 40% at 90% 100%, oklch(0.80 0.09 72 / 0.12) 0%, transparent 50%),
+      radial-gradient(ellipse 60% 50% at -10% 60%, oklch(0.72 0.12 22 / 0.10) 0%, transparent 50%),
+      oklch(0.11 0.012 28);
+  }
+
+  .card-shimmer {
+    background: linear-gradient(
+      135deg,
+      oklch(0.16 0.014 28) 0%,
+      oklch(0.19 0.018 32) 50%,
+      oklch(0.16 0.014 28) 100%
+    );
+    border: 1px solid oklch(0.72 0.12 22 / 0.15);
+  }
+
+  .btn-primary-glow {
+    box-shadow: 0 0 32px oklch(0.72 0.12 22 / 0.35), 0 4px 16px oklch(0 0 0 / 0.4);
+  }
+
+  .text-gradient {
+    background: linear-gradient(135deg, oklch(0.72 0.12 22), oklch(0.85 0.08 70));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+}
